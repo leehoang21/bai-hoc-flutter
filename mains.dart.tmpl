@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+{{#withPluginHook}}
+import 'dart:async';
+import 'package:flutter/services.dart';
+import 'package:{{pluginProjectName}}/{{pluginProjectName}}.dart';
+{{/withPluginHook}}
+
+void main() {
+  runApp(MyApp());
+}
+
+{{^withPluginHook}}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+    );
+  }
+}
+{{/withPluginHook}}
